@@ -3,7 +3,6 @@ import os
 
 TOKEN_TELEBOT = os.environ["TOKEN_TELEBOT"]
 
-# TOKEN_WEATHER_API = os.environ['TOKEN_WEATHER_API']
 
 bot = telebot.TeleBot(TOKEN_TELEBOT)
 
