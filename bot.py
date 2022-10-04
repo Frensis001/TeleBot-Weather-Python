@@ -10,7 +10,7 @@ IS_HEROKU = os.environ.get('IS_HEROKU', False)
 
 @bot.message_handler(commands=['start'])
 def start_cmd(message):
-    if 'IS_HEROKU':
+    if IS_HEROKU:
         bot.reply_to(message, 'Я на сервере Heroku')
     else:
         bot.reply_to(message, 'Привет!')
