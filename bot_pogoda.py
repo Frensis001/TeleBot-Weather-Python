@@ -10,9 +10,10 @@ def weather_api(City):
         'units': 'metric'
 
     }
-
     req = requests.get(url_api, params=params)
     data = req.json()
-    print(data)
     weather = str(data["main"]["temp"]) + '°C'
     return weather
+
+
+

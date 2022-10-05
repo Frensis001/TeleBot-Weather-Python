@@ -1,7 +1,9 @@
 import telebot
 import os
 from bot_pogoda import weather_api
+import redis
 
+redis_db = redis.from_url.(os.environ.get(''))
 
 TOKEN_TELEBOT = os.environ["TOKEN_TELEBOT"]
 
