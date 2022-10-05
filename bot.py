@@ -3,7 +3,7 @@ import os
 
 TOKEN_TELEBOT = os.environ("TOKEN_TELEBOT")
 
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(TOKEN_TELEBOT)
 
 
 @bot.message_handler(commands=['start'])
