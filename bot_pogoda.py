@@ -19,9 +19,9 @@ def weather_api(City):
         print('не верный город')
         return "Не верный город"
     else:
-        weather = "Температура = " + str(data["main"]["temp"]) + '°C ' + \
-                  "\nВетер = " + str(data["wind"]["speed"]) + ' м/с' + \
-                  "\nВлажность = " + str(data["main"]["humidity"]) + '%'
+        weather = "🔥Температура = " + str(data["main"]["temp"]) + '°C ' + \
+                  "\n💨Ветер = " + str(data["wind"]["speed"]) + ' м/с' + \
+                  "\n💧Влажность = " + str(data["main"]["humidity"]) + '%'
         return weather
 
 

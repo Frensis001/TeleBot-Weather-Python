@@ -19,5 +19,6 @@ def start_cmd(message):
 def weather_call(message):
         Cyti = message.text.lower()
         bot.reply_to(message, weather_api(Cyti))
+        print(message.text)
 
 bot.polling()
