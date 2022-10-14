@@ -12,7 +12,7 @@ bot = telebot.TeleBot(TOKEN_TELEBOT)
 @bot.message_handler(commands=['start'])
 def start_cmd(message):
         user_name = message.from_user.first_name
-        bot.send_message(message.from_user.id, 'Привет ' + user_name + "\nЭто телеграм бот погоды\nВведите город ")
+        bot.send_message(message.from_user.id, 'Приветствую вас ' + user_name + "\nЭто телеграм бот погоды\nВведите город ")
 
 
 @bot.message_handler(func=lambda message: True)
