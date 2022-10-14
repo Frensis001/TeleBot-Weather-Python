@@ -12,8 +12,12 @@ def weather_api(City):
     }
     req = requests.get(url_api, params=params)
     data = req.json()
-    weather = str(data["main"]["temp"]) + '°C'
-    return weather
-
+    print(data)
+    if (data["cod"]) == '404':
+        print('не верный город')
+        return "Не верный город"
+    else:
+        weather = str(data["main"]["temp"]) + '°C'
+        return weather
 
 
