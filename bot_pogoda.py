@@ -1,6 +1,8 @@
 import requests
 import os
+
 TOKEN_API_WEATHER = os.environ["TOKEN_API_WEATHER"]
+
 
 def weather_api(City):
     url_api = "https://api.openweathermap.org/data/2.5/weather"
@@ -21,3 +23,5 @@ def weather_api(City):
         return weather
 
 
+if __name__ == "__main__":
+    weather_api()
