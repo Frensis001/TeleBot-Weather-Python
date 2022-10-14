@@ -10,11 +10,9 @@ bot = telebot.TeleBot(TOKEN_TELEBOT)
 
 @bot.message_handler(commands=['start'])
 def start_cmd(message):
-        user_id = message.from_user.id
         user_name = message.from_user.first_name
         bot.reply_to(message, 'Привет ' + user_name + "\nЭто телеграм бот погоды\nВведите город на Английском Пример:'Moscow'")
-        print(user_name, user_id,)
-        print(message)
+
 @bot.message_handler(func=lambda message: True)
 def weather_call(message):
         Cyti = message.text.lower()
