@@ -17,7 +17,7 @@ def weather_api(City):
     print(data)
     if (data["cod"]) == '404':
         print('не верный город')
-        return "Не верный город"
+        return "Есть такой город ?"
     else:
         weather = "🔥Температура = " + str(data["main"]["temp"]) + '°C ' + \
                   "\n💨Ветер = " + str(data["wind"]["speed"]) + ' м/с' + \
