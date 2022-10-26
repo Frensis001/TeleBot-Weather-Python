@@ -14,14 +14,12 @@ def weather_api(City):
     }
     req = requests.get(url_api, params=params)
     data = req.json()
-    print(data)
     if (data["cod"]) == '404':
-        print('не верный город')
         return "Есть такой город ?"
     else:
-        weather = "🔥Температура = " + str(data["main"]["temp"]) + '°C ' + \
-                  "\n💨Ветер = " + str(data["wind"]["speed"]) + ' м/с' + \
-                  "\n💧Влажность = " + str(data["main"]["humidity"]) + '%'
+        weather = "🔥Температура  " + str(data["main"]["temp"]) + '°C ' + \
+                  "\n💨Ветер  " + str(data["wind"]["speed"]) + ' м/с' + \
+                  "\n💧Влажность  " + str(data["main"]["humidity"]) + '%'
         return weather
 
 

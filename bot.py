@@ -17,7 +17,7 @@ def start_cmd(message):
 
 @bot.message_handler(func=lambda message: True)
 def weather_call(message):
-        Cyti = message.text.lower()
-        bot.reply_to(message, weather_api(Cyti))
+        City = message.text.lower()
+        bot.reply_to(message, weather_api(City))
 
 bot.polling()
