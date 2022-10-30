@@ -7,7 +7,7 @@ TOKEN_API_WEATHER = os.environ["TOKEN_API_WEATHER"]
 
 smail_weather = {
     '01n': '☀',
-    '02d':
+    '02d':  '1',
     '03d': '⛅'
 
 }
