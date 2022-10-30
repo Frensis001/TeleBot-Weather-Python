@@ -6,8 +6,8 @@ TOKEN_API_WEATHER = os.environ["TOKEN_API_WEATHER"]
 
 
 smail_weather = {
-    '01n': '☀'
-
+    '01n': '☀',
+    '03d': '123'
 }
 
 
@@ -29,9 +29,9 @@ def weather_api(City):
     else:
         if (data['weather'][0]['icon']) in smail_weather:
             icon = smail_weather[(data['weather'][0]['icon'])]
-            weather = str(data['weather'][0]['description']).capitalize() + icon +\
-                        "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
-                        "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
-                        "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
-                        "\nОблачность " + str(data["clouds"]['all']) + '%'
+        weather = str(data['weather'][0]['description']).capitalize() + icon +\
+                    "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
+                    "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
+                    "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
+                    "\nОблачность " + str(data["clouds"]['all']) + '%'
         return weather
