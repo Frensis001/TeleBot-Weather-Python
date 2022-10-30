@@ -42,6 +42,6 @@ def weather_api(City):
                     "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
                     "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
                     "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
-                    "\nОблачность " + str(data["clouds"]['all']) + '%' +
+                    "\nОблачность " + str(data["clouds"]['all']) + '%'
 
         return weather
