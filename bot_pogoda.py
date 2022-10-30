@@ -24,4 +24,4 @@ def weather_api(City):
                   "\nВлажность  " + str(data["main"]["humidity"]) + '%'
         return weather
 
-"\nТемпература  " + str(data["weather"]["description"])
+#"\nТемпература  " + str(data["weather"]["description"])
