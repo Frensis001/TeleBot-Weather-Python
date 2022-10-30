@@ -23,5 +23,3 @@ def weather_api(City):
                   "\nВетер  " + str(data["wind"]["speed"]) + ' м/с' + \
                   "\nВлажность  " + str(data["main"]["humidity"]) + '%'
         return weather
-
-#"\nТемпература  " + str(data["weather"]["description"])
