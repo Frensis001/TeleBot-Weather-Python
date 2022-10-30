@@ -37,10 +37,11 @@ def weather_api(City):
         if (data['weather'][0]['icon']) in smail_weather:
             smail = smail_weather(data['weather'][0]['icon'])
 
-        weather = smail + '\n' + \
-            str(data['weather'][0]['description']).capitalize() + \
-            "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
-            "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
-            "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
-            "\nОблачность " + str(data["clouds"]['all']) + '%'
+        weather = smail + '\n'
+                    str(data['weather'][0]['description']).capitalize() + \
+                    "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
+                    "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
+                    "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
+                    "\nОблачность " + str(data["clouds"]['all']) + '%' +
+
         return weather
