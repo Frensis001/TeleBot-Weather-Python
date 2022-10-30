@@ -1,5 +1,6 @@
 import requests
 import os
+from pprint import pprint
 
 TOKEN_API_WEATHER = os.environ["TOKEN_API_WEATHER"]
 
@@ -15,11 +16,12 @@ def weather_api(City):
     }
     req = requests.get(url_api, params=params)
     data = req.json()
-    print(data)
+    pprint(data)
     if (data["cod"]) == '404':
         return "Есть такой город ?"
     else:
-        weather = "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
+        weather = str(data['weather']["temp"]) + \
+                  "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
                   "\nВетер  " + str(data["wind"]["speed"]) + ' м/с' + \
                   "\nВлажность  " + str(data["main"]["humidity"]) + '%'
         return weather
