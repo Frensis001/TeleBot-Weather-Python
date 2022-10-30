@@ -5,6 +5,11 @@ from pprint import pprint
 TOKEN_API_WEATHER = os.environ["TOKEN_API_WEATHER"]
 
 
+smail_weather = {
+
+}
+
+
 def weather_api(City):
     url_api = "https://api.openweathermap.org/data/2.5/weather"
     params = {
@@ -22,6 +27,7 @@ def weather_api(City):
     else:
         weather = str(data['weather'][0]['description']).capitalize() +\
                   "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
-                  "\nВетер  " + str(data["wind"]["speed"]) + ' м/с' + \
-                  "\nВлажность  " + str(data["main"]["humidity"]) + '%'
+                  "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
+                  "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
+                  "\nОблачность " + str(data["clouds"]['all']) + '%'
         return weather
