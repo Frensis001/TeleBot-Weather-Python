@@ -20,7 +20,8 @@ def weather_api(City):
     if (data["cod"]) == '404':
         return "Есть такой город ?"
     else:
-        weather = "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
+        weather =
+                  "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
                   "\nВетер  " + str(data["wind"]["speed"]) + ' м/с' + \
                   "\nВлажность  " + str(data["main"]["humidity"]) + '%'
         return weather
