@@ -9,7 +9,8 @@ def weather_api(City):
     params = {
         'q': City,
         'appid': TOKEN_API_WEATHER,
-        'units': 'metric'
+        'units': 'metric',
+        'lang': 'ru'
 
     }
     req = requests.get(url_api, params=params)
@@ -19,9 +20,7 @@ def weather_api(City):
     else:
         weather = "🔥Температура  " + str(data["main"]["temp"]) + '°C ' + \
                   "\n💨Ветер  " + str(data["wind"]["speed"]) + ' м/с' + \
-                  "\n💧Влажность  " + str(data["main"]["humidity"]) + '%'
+                  "\n💧Влажность  " + str(data["main"]["humidity"]) + '%' + \
+                  "\n Условия " + str(data["weather"]["description"])
         return weather
 
-
-if __name__ == "__main__":
-    weather_api()
