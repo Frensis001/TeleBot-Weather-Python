@@ -35,7 +35,7 @@ def weather_api(City):
         return "Есть такой город ?"
     else:
         if (data['weather'][0]['icon']) in smail_weather:
-            smail = smail_weather(data['weather'][0]['icon'])
+            smail = smail_weather[(data['weather'][0]['icon'])]
 
         weather = smail + '\n'+ \
                     str(data['weather'][0]['description']).capitalize() + \
