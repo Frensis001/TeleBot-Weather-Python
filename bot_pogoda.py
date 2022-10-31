@@ -47,6 +47,6 @@ def weather_api(City):
                 "\nОблачность: " + str(data["clouds"]['all']) + '%' + \
                 "\n Восход сольца: " + str(time_rise) + \
                 "Закат солнца: " + str(time_set) + \
-                "\nПродолжительность дня: " + time_day
+                "\nПродолжительность дня: " + str(time_day)
 
         return weather
