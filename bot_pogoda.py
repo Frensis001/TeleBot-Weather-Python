@@ -43,7 +43,7 @@ def weather_api(City):
                 "\nСкорость ветера:  " + str(data["wind"]["speed"]) + ' м/с' + \
                 "\nВлажность:  " + str(data["main"]["humidity"]) + '%' + \
                 "\nОблачность: " + str(data["clouds"]['all']) + '%' + \
-                "\n Восход сольца: " + datetime.datetime.fromtimestamp(data["sys"]["sunrise"]) + \
-                "Закат солнца: " + datetime.datetime.fromtimestamp(data["sys"]["sunset"])
+                "\n Восход сольца: " + str((datetime.datetime.fromtimestamp(data["sys"]["sunrise"])) + \
+                "Закат солнца: " + str(datetime.datetime.fromtimestamp(data["sys"]["sunset"]))
 
         return weather
