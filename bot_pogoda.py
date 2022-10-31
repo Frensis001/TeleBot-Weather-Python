@@ -36,8 +36,9 @@ def weather_api(City):
     else:
         if (data['weather'][0]['icon']) in smail_weather:
             smail = smail_weather[(data['weather'][0]['icon'])]
-        time_rise = datetime.datetime.fromtimestamp(data["sys"]["sunrise"]) + datetime.timedelta(hours=5)
-        time_set = datetime.datetime.fromtimestamp(data["sys"]["sunset"]) + datetime.timedelta(hours=5)
+        time_zone = float(data["timezone"])
+        time_rise = datetime.datetime.fromtimestamp(data["sys"]["sunrise"]) + datetime.timedelta(hours=time_zone)
+        time_set = datetime.datetime.fromtimestamp(data["sys"]["sunset"]) + datetime.timedelta(hours=time_zone)
         time_day = time_set - time_rise
         weather = str(data['weather'][0]['description']).capitalize() + \
                 "\n" + smail + \
