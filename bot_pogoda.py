@@ -36,8 +36,8 @@ def weather_api(City):
     else:
         if (data['weather'][0]['icon']) in smail_weather:
             smail = smail_weather[(data['weather'][0]['icon'])]
-        time_rise = datetime.datetime.fromtimestamp(data["sys"]["sunrise"])
-        time_set = datetime.datetime.fromtimestamp(data["sys"]["sunset"])
+        time_rise = datetime.datetime.fromtimestamp(data["sys"]["sunrise"]) + datetime.timedelta(hours=5)
+        time_set = datetime.datetime.fromtimestamp(data["sys"]["sunset"]) + datetime.timedelta(hours=5)
         time_day = time_set - time_rise
         weather = str(data['weather'][0]['description']).capitalize() + \
                 "\n" + smail + \
@@ -45,7 +45,7 @@ def weather_api(City):
                 "\nСкорость ветера:  " + str(data["wind"]["speed"]) + ' м/с' + \
                 "\nВлажность:  " + str(data["main"]["humidity"]) + '%' + \
                 "\nОблачность: " + str(data["clouds"]['all']) + '%' + \
-                "\n Восход сольца: " + str(time_rise) + \
+                "\nВосход сольца: " + str(time_rise) + \
                 "\nЗакат солнца: " + str(time_set) + \
                 "\nПродолжительность дня: " + str(time_day)
 
