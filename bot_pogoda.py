@@ -43,8 +43,9 @@ def weather_api(City):
         weather = str(data['weather'][0]['description']).capitalize() + \
                 "\n" + smail + \
                 "\nТемпература:  " + str(data["main"]["temp"]) + '°C ' + \
-                "\nСкорость ветера:  " + str(data["wind"]["speed"]) + ' м/с' + \
                 "\nВлажность:  " + str(data["main"]["humidity"]) + '%' + \
+                "\nАтмосферное давление: " + str(data["main.pressure"]) + 'гПа' \
+                "\nСкорость ветера:  " + str(data["wind"]["speed"]) + ' м/с' + \
                 "\nОблачность: " + str(data["clouds"]['all']) + '%' + \
                 "\nВосход сольца: " + str(time_rise) + \
                 "\nЗакат солнца: " + str(time_set) + \
