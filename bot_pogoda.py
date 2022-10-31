@@ -1,6 +1,7 @@
 import requests
 import os
 from pprint import pprint
+import datetime
 
 TOKEN_API_WEATHER = os.environ["TOKEN_API_WEATHER"]
 
@@ -37,10 +38,14 @@ def weather_api(City):
             smail = smail_weather[(data['weather'][0]['icon'])]
 
         weather = str(data['weather'][0]['description']).capitalize() + \
-                  '\n' + smail + \
-                  "\nТемпература  " + str(data["main"]["temp"]) + '°C ' + \
-                  "\nСкорость ветера  " + str(data["wind"]["speed"]) + ' м/с' + \
-                  "\nВлажность  " + str(data["main"]["humidity"]) + '%' + \
-                  "\nОблачность " + str(data["clouds"]['all']) + '%'
+                "\n" + smail + \
+                "\nТемпература:  " + str(data["main"]["temp"]) + '°C ' + \
+                "\nСкорость ветера:  " + str(data["wind"]["speed"]) + ' м/с' + \
+                "\nВлажность:  " + str(data["main"]["humidity"]) + '%' + \
+                "\nОблачность: " + str(data["clouds"]['all']) + '%' + \
+                "\n Восход сольца: " + datetime.datetime.fromtimestamp(data["sys"]["sunrise"]) + \
+                "Закат солнца: " + datetime.datetime.fromtimestamp(data["sys"]["sunset"]) + \
+                "\nПродолжительность дня: " + datetime.datetime.fromtimestamp(data["sys"]["sunset"]) - datetime.datetime.fromtimestamp(
+            data["sys"]["sunrise"])
 
         return weather
